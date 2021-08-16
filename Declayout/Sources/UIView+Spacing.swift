@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol Anchorable {
+public protocol Spacingable {
   typealias LayoutAnchor = LayoutAttribute.Anchor
   func top(to view: UIView, of anchor: LayoutAnchor, _ constant: CGFloat) -> Self
   func leading(to view: UIView, of anchor: LayoutAnchor, _ constant: CGFloat) -> Self
@@ -17,11 +17,38 @@ public protocol Anchorable {
 }
 
 extension LayoutAttribute {
+  
   public enum Anchor {
     case top(_ isSafeArea: Bool = false)
     case bottom(_ isSafeArea: Bool = false)
     case leading(_ isSafeArea: Bool = false)
     case trailing(_ isSafeArea: Bool = false)
+  }
+  
+  public enum Spacing {
+    case top(_ isMargin: Bool = false)
+    case bottom(_ isMargin: Bool = false)
+    case left(_ isMargin: Bool = false)
+    case leading(_ isMargin: Bool = false)
+    case right(_ isMargin: Bool = false)
+    case trailing(_ isMargin: Bool = false)
+    
+    public var value: NSLayoutConstraint.Attribute {
+      switch self {
+      case let .top(isMargin):
+        return isMargin ? .topMargin : .top
+      case let .left(isMargin):
+        return isMargin ? .leftMargin : .left
+      case let .leading(isMargin):
+        return isMargin ? .leadingMargin : .leading
+      case let .bottom(isMargin):
+        return isMargin ? .bottomMargin : .bottom
+      case let .right(isMargin):
+        return isMargin ? .rightMargin : .right
+      case let .trailing(isMargin):
+        return isMargin ? .trailingMargin : .trailing
+      }
+    }
   }
 }
 
