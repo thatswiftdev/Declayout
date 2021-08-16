@@ -16,6 +16,13 @@
 		4FA54F6826CA1D6900C6AC2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA54F6626CA1D6900C6AC2A /* Main.storyboard */; };
 		4FA54F6A26CA1D6A00C6AC2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FA54F6926CA1D6A00C6AC2A /* Assets.xcassets */; };
 		4FA54F6D26CA1D6A00C6AC2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA54F6B26CA1D6A00C6AC2A /* LaunchScreen.storyboard */; };
+		4FA54F7326CA1FD200C6AC2A /* UIView+Constraintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7226CA1FD200C6AC2A /* UIView+Constraintable.swift */; };
+		4FA54F7526CA203E00C6AC2A /* UIView+Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7426CA203E00C6AC2A /* UIView+Dimension.swift */; };
+		4FA54F7726CA207200C6AC2A /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7626CA207200C6AC2A /* UIView+Anchor.swift */; };
+		4FA54F7926CA209900C6AC2A /* UIView+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7826CA209900C6AC2A /* UIView+Center.swift */; };
+		4FA54F7B26CA20DE00C6AC2A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7A26CA20DE00C6AC2A /* Spacing.swift */; };
+		4FA54F7D26CA20F400C6AC2A /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7C26CA20F400C6AC2A /* Constraint.swift */; };
+		4FA54F8026CA21A100C6AC2A /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7F26CA21A100C6AC2A /* Buildable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +50,13 @@
 		4FA54F6926CA1D6A00C6AC2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FA54F6C26CA1D6A00C6AC2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FA54F6E26CA1D6A00C6AC2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FA54F7226CA1FD200C6AC2A /* UIView+Constraintable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraintable.swift"; sourceTree = "<group>"; };
+		4FA54F7426CA203E00C6AC2A /* UIView+Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Dimension.swift"; sourceTree = "<group>"; };
+		4FA54F7626CA207200C6AC2A /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		4FA54F7826CA209900C6AC2A /* UIView+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Center.swift"; sourceTree = "<group>"; };
+		4FA54F7A26CA20DE00C6AC2A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		4FA54F7C26CA20F400C6AC2A /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		4FA54F7F26CA21A100C6AC2A /* Buildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +110,7 @@
 			children = (
 				4FA54F4326CA1CD300C6AC2A /* Declayout.h */,
 				4FA54F4426CA1CD300C6AC2A /* Info.plist */,
+				4FA54F7E26CA210700C6AC2A /* Sources */,
 			);
 			path = Declayout;
 			sourceTree = "<group>";
@@ -121,6 +136,20 @@
 				4FA54F6E26CA1D6A00C6AC2A /* Info.plist */,
 			);
 			path = "Declayout-Example";
+			sourceTree = "<group>";
+		};
+		4FA54F7E26CA210700C6AC2A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4FA54F7226CA1FD200C6AC2A /* UIView+Constraintable.swift */,
+				4FA54F7426CA203E00C6AC2A /* UIView+Dimension.swift */,
+				4FA54F7626CA207200C6AC2A /* UIView+Anchor.swift */,
+				4FA54F7826CA209900C6AC2A /* UIView+Center.swift */,
+				4FA54F7A26CA20DE00C6AC2A /* Spacing.swift */,
+				4FA54F7C26CA20F400C6AC2A /* Constraint.swift */,
+				4FA54F7F26CA21A100C6AC2A /* Buildable.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +230,7 @@
 				TargetAttributes = {
 					4FA54F3F26CA1CD300C6AC2A = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					4FA54F4826CA1CD300C6AC2A = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -262,6 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FA54F8026CA21A100C6AC2A /* Buildable.swift in Sources */,
+				4FA54F7D26CA20F400C6AC2A /* Constraint.swift in Sources */,
+				4FA54F7326CA1FD200C6AC2A /* UIView+Constraintable.swift in Sources */,
+				4FA54F7526CA203E00C6AC2A /* UIView+Dimension.swift in Sources */,
+				4FA54F7B26CA20DE00C6AC2A /* Spacing.swift in Sources */,
+				4FA54F7726CA207200C6AC2A /* UIView+Anchor.swift in Sources */,
+				4FA54F7926CA209900C6AC2A /* UIView+Center.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +475,7 @@
 		4FA54F5526CA1CD300C6AC2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 296RF6QMS7;
@@ -455,6 +493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.overheardswift.Declayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,6 +502,7 @@
 		4FA54F5626CA1CD300C6AC2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 296RF6QMS7;
@@ -488,6 +528,7 @@
 		4FA54F5826CA1CD300C6AC2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 296RF6QMS7;
 				INFOPLIST_FILE = DeclayoutTests/Info.plist;
@@ -506,6 +547,7 @@
 		4FA54F5926CA1CD300C6AC2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 296RF6QMS7;
 				INFOPLIST_FILE = DeclayoutTests/Info.plist;
