@@ -9,7 +9,7 @@ import UIKit
 
 public protocol Centerable {
   typealias LayoutCenter = LayoutAttribute.Center
-  func center(to view: UIView, center: LayoutCenter?, _ constant: CGFloat) -> Self
+  func center(_ axis: LayoutCenter?, to view: UIView, _ constant: CGFloat) -> Self
 }
 
 extension LayoutAttribute {
@@ -29,9 +29,9 @@ extension LayoutAttribute {
 extension UIView {
   
   @discardableResult
-  public func center(to view: UIView, center: LayoutCenter? = nil, _ constant: CGFloat = .zero) -> Self {
+  public func center(_ axis: LayoutCenter? = nil, to view: UIView, _ constant: CGFloat = .zero) -> Self {
     view.addSubview(self)
-    switch center {
+    switch axis {
     case .horizontal:
       centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: constant).activated()
     case .vertical:
