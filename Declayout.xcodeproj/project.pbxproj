@@ -21,7 +21,8 @@
 		4FA54F7926CA209900C6AC2A /* UIView+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7826CA209900C6AC2A /* UIView+Center.swift */; };
 		4FA54F7B26CA20DE00C6AC2A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7A26CA20DE00C6AC2A /* Spacing.swift */; };
 		4FA54F7D26CA20F400C6AC2A /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7C26CA20F400C6AC2A /* Constraint.swift */; };
-		4FA54F8026CA21A100C6AC2A /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F7F26CA21A100C6AC2A /* Buildable.swift */; };
+		4FA54F8226CA367900C6AC2A /* Declayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA54F4026CA1CD300C6AC2A /* Declayout.framework */; };
+		4FA54F8326CA367900C6AC2A /* Declayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA54F4026CA1CD300C6AC2A /* Declayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +33,28 @@
 			remoteGlobalIDString = 4FA54F3F26CA1CD300C6AC2A;
 			remoteInfo = Declayout;
 		};
+		4FA54F8426CA367900C6AC2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FA54F3726CA1CD300C6AC2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FA54F3F26CA1CD300C6AC2A;
+			remoteInfo = Declayout;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4FA54F8626CA367900C6AC2A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4FA54F8326CA367900C6AC2A /* Declayout.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4FA54F4026CA1CD300C6AC2A /* Declayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Declayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,7 +76,6 @@
 		4FA54F7826CA209900C6AC2A /* UIView+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Center.swift"; sourceTree = "<group>"; };
 		4FA54F7A26CA20DE00C6AC2A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		4FA54F7C26CA20F400C6AC2A /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
-		4FA54F7F26CA21A100C6AC2A /* Buildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FA54F8226CA367900C6AC2A /* Declayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +112,7 @@
 				4FA54F4D26CA1CD300C6AC2A /* DeclayoutTests */,
 				4FA54F5F26CA1D6900C6AC2A /* Declayout-Example */,
 				4FA54F4126CA1CD300C6AC2A /* Products */,
+				4FA54F8126CA367900C6AC2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,9 +167,15 @@
 				4FA54F7826CA209900C6AC2A /* UIView+Center.swift */,
 				4FA54F7A26CA20DE00C6AC2A /* Spacing.swift */,
 				4FA54F7C26CA20F400C6AC2A /* Constraint.swift */,
-				4FA54F7F26CA21A100C6AC2A /* Buildable.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		4FA54F8126CA367900C6AC2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,10 +234,12 @@
 				4FA54F5A26CA1D6900C6AC2A /* Sources */,
 				4FA54F5B26CA1D6900C6AC2A /* Frameworks */,
 				4FA54F5C26CA1D6900C6AC2A /* Resources */,
+				4FA54F8626CA367900C6AC2A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4FA54F8526CA367900C6AC2A /* PBXTargetDependency */,
 			);
 			name = "Declayout-Example";
 			productName = "Declayout-Example";
@@ -288,7 +319,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FA54F8026CA21A100C6AC2A /* Buildable.swift in Sources */,
 				4FA54F7D26CA20F400C6AC2A /* Constraint.swift in Sources */,
 				4FA54F7326CA1FD200C6AC2A /* UIView+Constraintable.swift in Sources */,
 				4FA54F7526CA203E00C6AC2A /* UIView+Dimension.swift in Sources */,
@@ -323,6 +353,11 @@
 			isa = PBXTargetDependency;
 			target = 4FA54F3F26CA1CD300C6AC2A /* Declayout */;
 			targetProxy = 4FA54F4B26CA1CD300C6AC2A /* PBXContainerItemProxy */;
+		};
+		4FA54F8526CA367900C6AC2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FA54F3F26CA1CD300C6AC2A /* Declayout */;
+			targetProxy = 4FA54F8426CA367900C6AC2A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
