@@ -23,14 +23,16 @@ private struct UsesAutoLayout<T: UIView> {
 public enum LayoutAttribute {}
 
 public protocol Constraintable: Dimensionable, Anchorable, Centerable {
-  typealias ConstraintParameter = (inout Self) -> Void
+  typealias ViewParams = (inout Self) -> Void
+  init()
 }
 
 extension Constraintable where Self: UIView {
   
   @discardableResult
-  public func constraints(_ with: ConstraintParameter) -> Self {
-    @UsesAutoLayout var this = self
+  public static func make(_ with: ViewParams) -> Self {
+    @UsesAutoLayout var this: Self
+    this = self.init()
     with(&this)
     return this
   }
