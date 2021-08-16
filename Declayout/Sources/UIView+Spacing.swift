@@ -52,7 +52,7 @@ extension LayoutAttribute {
   }
 }
 
-extension UIView {
+extension Constraintable where Self: UIView {
   
   private func anchor<T: AnyObject>(_ type: LayoutAnchor) -> T {
     let safeArea = self.safeAreaLayoutGuide

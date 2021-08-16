@@ -26,7 +26,7 @@ extension LayoutAttribute {
   }
 }
 
-extension UIView {
+extension Constraintable where Self: UIView {
   
   @discardableResult
   public func center(_ axis: LayoutCenter? = nil, to view: UIView, _ constant: CGFloat = .zero) -> Self {

@@ -30,7 +30,7 @@ extension LayoutAttribute {
   }
 }
 
-extension UIView {
+extension Constraintable where Self: UIView {
   
   private func dimension(_ type: LayoutDimension) -> NSLayoutDimension {
     switch type {
