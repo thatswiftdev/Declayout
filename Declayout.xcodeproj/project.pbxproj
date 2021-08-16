@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4FA54F4A26CA1CD300C6AC2A /* Declayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA54F4026CA1CD300C6AC2A /* Declayout.framework */; };
 		4FA54F4F26CA1CD300C6AC2A /* DeclayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F4E26CA1CD300C6AC2A /* DeclayoutTests.swift */; };
-		4FA54F5126CA1CD300C6AC2A /* Declayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FA54F4326CA1CD300C6AC2A /* Declayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FA54F6126CA1D6900C6AC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F6026CA1D6900C6AC2A /* AppDelegate.swift */; };
 		4FA54F6326CA1D6900C6AC2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F6226CA1D6900C6AC2A /* SceneDelegate.swift */; };
 		4FA54F6526CA1D6900C6AC2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA54F6426CA1D6900C6AC2A /* ViewController.swift */; };
@@ -37,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		4FA54F4026CA1CD300C6AC2A /* Declayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Declayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FA54F4326CA1CD300C6AC2A /* Declayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Declayout.h; sourceTree = "<group>"; };
 		4FA54F4426CA1CD300C6AC2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FA54F4926CA1CD300C6AC2A /* DeclayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeclayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FA54F4E26CA1CD300C6AC2A /* DeclayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclayoutTests.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 		4FA54F4226CA1CD300C6AC2A /* Declayout */ = {
 			isa = PBXGroup;
 			children = (
-				4FA54F4326CA1CD300C6AC2A /* Declayout.h */,
 				4FA54F4426CA1CD300C6AC2A /* Info.plist */,
 				4FA54F7E26CA210700C6AC2A /* Sources */,
 			);
@@ -159,7 +156,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FA54F5126CA1CD300C6AC2A /* Declayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
