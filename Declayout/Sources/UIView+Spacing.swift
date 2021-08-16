@@ -97,10 +97,10 @@ extension Constraintable where Self: UIView {
   }
   
   @discardableResult
-  public func edges(to view: UIView, _ constant: CGFloat = .zero) -> Self {
-    return self.top(to: view, constant)
-      .leading(to: view, constant)
-      .bottom(to: view, constant)
-      .trailing(to: view, constant)
+  public func edges(to view: UIView, _ isSafeArea: Bool = false, _ constant: CGFloat = .zero) -> Self {
+    return self.top(to: view, of: .top(isSafeArea), constant)
+      .leading(to: view, of: .leading(isSafeArea), constant)
+      .bottom(to: view, of: .bottom(isSafeArea), constant)
+      .trailing(to: view, of: .trailing(isSafeArea), constant)
   }
 }
