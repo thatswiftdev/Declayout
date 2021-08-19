@@ -10,24 +10,46 @@ import XCTest
 
 class DeclayoutTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+  func test_view_translatesAutoresizingMaskIntoConstraintIsFalse() {
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    let view = UIView.make { $0 = UIView() }
+    
+    XCTAssertEqual(view.translatesAutoresizingMaskIntoConstraints, false)
+  }
+  
+  func test_view_constraintsIsEmpty() {
+    
+    let view = UIView.make { $0 = UIView() }
+  
+    XCTAssertTrue(view.constraints.isEmpty)
+  }
+  
+  func test_view_constraintsIsNotEmpty() {
+    
+    let view = UIView.make { $0 = UIView() }
+    _ = UIView.make {
+      $0.center(.horizontal, to: view)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    XCTAssertEqual(view.constraints.isEmpty, false)
+  }
+  
+  func test_view_hasOneConstraint() {
+    let view = UIView.make { $0 = UIView() }
+    _ = UIView.make {
+      $0.center(.horizontal, to: view)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    XCTAssertEqual(view.constraints.count, 1)
+  }
+  
+  func test_view_hasTwoConstraints() {
+    let view = UIView.make { $0 = UIView() }
+    _ = UIView.make {
+      $0.center(to: view)
     }
-
+    
+    XCTAssertEqual(view.constraints.count, 2)
+  }
+  
 }

@@ -13,7 +13,7 @@ public protocol Spacingable {
   func leading(to view: UIView, of anchor: LayoutAnchor, _ constant: CGFloat) -> Self
   func bottom(to view: UIView, of anchor: LayoutAnchor, _ constant: CGFloat) -> Self
   func trailing(to view: UIView, of anchor: LayoutAnchor, _ constant: CGFloat) -> Self
-  func edges(to view: UIView, _ constant: CGFloat) -> Self
+  func edges(to view: UIView, _ constant: CGFloat, _ isSafeArea: Bool) -> Self
 }
 
 extension LayoutAttribute {
@@ -52,7 +52,7 @@ extension LayoutAttribute {
   }
 }
 
-extension Constraintable where Self: UIView {
+extension Spacingable where Self: UIView {
   
   private func anchor<T: AnyObject>(_ type: LayoutAnchor) -> T {
     let safeArea = self.safeAreaLayoutGuide
@@ -97,7 +97,7 @@ extension Constraintable where Self: UIView {
   }
   
   @discardableResult
-  public func edges(to view: UIView, _ isSafeArea: Bool = false, _ constant: CGFloat = .zero) -> Self {
+  public func edges(to view: UIView, _ constant: CGFloat = .zero, _ isSafeArea: Bool = false) -> Self {
     return self.top(to: view, of: .top(isSafeArea), constant)
       .leading(to: view, of: .leading(isSafeArea), constant)
       .bottom(to: view, of: .bottom(isSafeArea), constant)

@@ -57,6 +57,7 @@ final class ViewController: UIViewController {
       .spacing(from: label, .top(), to: blueBox, .bottom()),
       .center(from: label, .horizontal, to: blueBox, .horizontal)
     ])
+
   }
   
   private func makeView(title: String, color: UIColor) -> UIView {
