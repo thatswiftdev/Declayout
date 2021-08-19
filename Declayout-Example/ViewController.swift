@@ -55,7 +55,7 @@ final class ViewController: UIViewController {
     ])
     .addConstraints([
       .spacing(from: label, .top(), to: blueBox, .bottom()),
-      .center(from: label, .horizontal, to: blueBox, .horizontal)
+      .center(from: label, to: blueBox, .horizontal)
     ])
 
   }
