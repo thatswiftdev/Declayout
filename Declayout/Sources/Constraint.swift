@@ -10,10 +10,10 @@ import UIKit
 public enum Constraint {
   
   case center(
+        _ attribute: LayoutAttribute.Center,
         from: UIView,
         relation: NSLayoutConstraint.Relation = .equal,
         to: UIView,
-        _ attribute: LayoutAttribute.Center,
         multiplier: CGFloat = 1,
         constant: CGFloat = .zero
        )
@@ -42,7 +42,7 @@ public enum Constraint {
     switch self {
     case let .spacing(firstView, attribute1, relation, secondView, attribute2, multiplier, constant):
       return makeConstraint(from: firstView, attribute1.value, relation: relation, to: secondView, attribute2.value, multiplier: multiplier, constant: constant)
-    case let .center(firstView, relation, secondView, attribute, multiplier, constant):
+    case let .center(attribute, firstView, relation, secondView, multiplier, constant):
       return makeConstraint(from: firstView, attribute.value, relation: relation, to: secondView, attribute.value, multiplier: multiplier, constant: constant)
     case let .dimension(firstView, attribute1, relation, secondView, attribute2, multiplier, constant):
       return makeConstraint(from: firstView, attribute1.value, relation: relation, to: secondView, attribute2.value, multiplier: multiplier, constant: constant)
