@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Declayout"
-  spec.version      = "1.0.2"
+  spec.version      = "1.1.0"
   spec.summary      = "Write simple and declarative-ish Auto Layout constraints with Swift."
   spec.homepage     = "https://github.com/overheardswift/Declayout"
   spec.license      = "MIT"
