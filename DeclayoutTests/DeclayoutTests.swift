@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Declayout
+import Declayout
 
 class DeclayoutTests: XCTestCase {
 
