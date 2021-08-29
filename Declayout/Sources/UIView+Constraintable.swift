@@ -38,7 +38,7 @@ extension Constraintable where Self: UIView {
   }
   
   @discardableResult
-  public func addConstraints(_ constraints: [Constraint]) -> Self {
+  public func addCustomConstraints(_ constraints: [Constraint]) -> Self {
     let constraints = constraints.map { $0.constraint }
     self.addConstraints(constraints)
     return self
