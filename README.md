@@ -36,6 +36,9 @@ $ pod install
 
 ## Usage
 
+### Example Project
+Clone this repository to see some of the usages on the `Declayout-Example` example project.
+
 ### Quick Start
 
 | Code Example |   Result   |
