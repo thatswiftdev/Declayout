@@ -2,7 +2,8 @@
 
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/firstcontributions/open-source-badges)
 [![Platform](https://img.shields.io/badge/Platform-iOS-yellow.svg)]()
-[![Pod](https://img.shields.io/badge/Pod-v_1.1.0-orange.svg)]()
+[![Pod](https://img.shields.io/badge/Pod-v_1.3.0-orange.svg)]()
+[![iOS](https://img.shields.io/badge/iOS-11.0-gray.svg)]()
 
 Write simple and declarative-_ish_ Auto Layout constraints with Swift.
 
