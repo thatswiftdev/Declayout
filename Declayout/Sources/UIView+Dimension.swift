@@ -1,8 +1,6 @@
 //
-//  UIView+Dimension.swift
 //  Declayout
-//
-//  Created by Bayu Kurniawan on 8/16/21.
+//  Created by Bayu Kurniawan (@overheardswift).
 //
 
 import UIKit

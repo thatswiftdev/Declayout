@@ -1,8 +1,6 @@
 //
-//  SceneDelegate.swift
-//  Declayout-Example
-//
-//  Created by Bayu Kurniawan on 8/16/21.
+//  Declayout
+//  Created by Bayu Kurniawan (@overheardswift).
 //
 
 import UIKit
