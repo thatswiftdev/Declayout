@@ -12,8 +12,10 @@ final class ViewController: UIViewController {
 
   private lazy var blueBox = UIView.make {
     $0.backgroundColor = .systemBlue
-    $0.dimension(400)
-      .center(to: view)
+    $0.top(to: view, of: .top(true), 0)
+      .leading(to: view)
+      .bottom(to: view)
+      .trailing(to: view)
   }
   
   private lazy var redBox = UIView.make {
@@ -57,7 +59,6 @@ final class ViewController: UIViewController {
       .spacing(from: label, .top(), to: blueBox, .bottom()),
       .center(.horizontal, from: label, to: blueBox)
     ])
-
   }
   
   private func makeView(title: String, color: UIColor) -> UIView {
