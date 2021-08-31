@@ -1,10 +1,3 @@
-//
-//  DeclayoutTests.swift
-//  DeclayoutTests
-//
-//  Created by Bayu Kurniawan on 8/16/21.
-//
-
 import XCTest
 import Declayout
 
@@ -33,23 +26,4 @@ class DeclayoutTests: XCTestCase {
     
     XCTAssertEqual(view.constraints.isEmpty, false)
   }
-  
-  func test_view_hasOneConstraint() {
-    let view = UIView.make { $0 = UIView() }
-    _ = UIView.make {
-      $0.center(.horizontal, to: view)
-    }
-    
-    XCTAssertEqual(view.constraints.count, 1)
-  }
-  
-  func test_view_hasTwoConstraints() {
-    let view = UIView.make { $0 = UIView() }
-    _ = UIView.make {
-      $0.center(to: view)
-    }
-    
-    XCTAssertEqual(view.constraints.count, 2)
-  }
-  
 }
