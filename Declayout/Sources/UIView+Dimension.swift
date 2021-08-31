@@ -10,10 +10,11 @@ import UIKit
 public protocol Dimensionable  {
   typealias LayoutDimension = LayoutAttribute.Dimension
   func height(_ constant: CGFloat) -> Self
-  func height(equalTo view: UIView, of dimension: LayoutDimension, multiplier: CGFloat) -> Self
+  func height(equalTo view: Constraintable, of dimension: LayoutDimension, multiplier: CGFloat) -> Self
   func width(_ constant: CGFloat) -> Self
-  func width(equalTo view: UIView, of dimension: LayoutDimension, multiplier: CGFloat) -> Self
+  func width(equalTo view: Constraintable, of dimension: LayoutDimension, multiplier: CGFloat) -> Self
   func dimension(_ constant: CGFloat) -> Self
+  func dimension(_ type: LayoutDimension) -> NSLayoutDimension
 }
 
 extension LayoutAttribute {
@@ -32,7 +33,7 @@ extension LayoutAttribute {
 
 extension Dimensionable where Self: UIView {
   
-  private func dimension(_ type: LayoutDimension) -> NSLayoutDimension {
+  public func dimension(_ type: LayoutDimension) -> NSLayoutDimension {
     switch type {
     case .height:
       return self.heightAnchor
@@ -48,8 +49,8 @@ extension Dimensionable where Self: UIView {
   }
   
   @discardableResult
-  public func height(equalTo view: UIView, of dimension: LayoutDimension = .height, multiplier: CGFloat = 1) -> Self {
-    view.addSubview(self)
+  public func height(equalTo view: Constraintable, of dimension: LayoutDimension = .height, multiplier: CGFloat = 1) -> Self {
+    view.addSubviews([self])
     heightAnchor.constraint(equalTo: view.dimension(dimension), multiplier: multiplier).activated()
     return self
   }
@@ -61,8 +62,8 @@ extension Dimensionable where Self: UIView {
   }
   
   @discardableResult
-  public func width(equalTo view: UIView, of dimension: LayoutDimension = .width, multiplier: CGFloat = 1) -> Self {
-    view.addSubview(self)
+  public func width(equalTo view: Constraintable, of dimension: LayoutDimension = .width, multiplier: CGFloat = 1) -> Self {
+    view.addSubviews([self])
     widthAnchor.constraint(equalTo: view.dimension(dimension), multiplier: multiplier).activated()
     return self
   }

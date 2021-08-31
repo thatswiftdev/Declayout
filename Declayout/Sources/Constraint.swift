@@ -11,18 +11,18 @@ public enum Constraint {
   
   case center(
         _ attribute: LayoutAttribute.Center,
-        from: UIView,
+        from: Constraintable,
         relation: NSLayoutConstraint.Relation = .equal,
-        to: UIView?,
+        to: Constraintable?,
         multiplier: CGFloat = 1,
         constant: CGFloat = .zero
        )
   
   case spacing(
-        from: UIView,
+        from: Constraintable,
         _ attribute1: LayoutAttribute.Spacing,
         relation: NSLayoutConstraint.Relation = .equal,
-        to: UIView?,
+        to: Constraintable?,
         _ attribute2: LayoutAttribute.Spacing?,
         multiplier: CGFloat = 1,
         constant: CGFloat = .zero
@@ -49,7 +49,7 @@ public enum Constraint {
     }
   }
   
-  private func makeConstraint(from firstView: UIView, _ attribute1: NSLayoutConstraint.Attribute, relation: NSLayoutConstraint.Relation = .equal, to secondView: UIView?, _ attribute2: NSLayoutConstraint.Attribute, multiplier: CGFloat, constant: CGFloat) -> NSLayoutConstraint {
+  private func makeConstraint(from firstView: Constraintable, _ attribute1: NSLayoutConstraint.Attribute, relation: NSLayoutConstraint.Relation = .equal, to secondView: Constraintable?, _ attribute2: NSLayoutConstraint.Attribute, multiplier: CGFloat, constant: CGFloat) -> NSLayoutConstraint {
     return NSLayoutConstraint(item: firstView, attribute: attribute1, relatedBy: relation, toItem: secondView, attribute: attribute2, multiplier: multiplier, constant: constant)
   }
   

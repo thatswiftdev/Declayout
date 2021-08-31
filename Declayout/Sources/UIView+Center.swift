@@ -9,7 +9,7 @@ import UIKit
 
 public protocol Centerable {
   typealias LayoutCenter = LayoutAttribute.Center
-  func center(_ axis: LayoutCenter?, to view: UIView, _ constant: CGFloat) -> Self
+  func center(_ axis: LayoutCenter?, to view: Constraintable, _ isSafeArea: Bool, _ constant: CGFloat) -> Self
 }
 
 extension LayoutAttribute {
@@ -29,18 +29,26 @@ extension LayoutAttribute {
 extension Centerable where Self: UIView {
   
   @discardableResult
-  public func center(_ axis: LayoutCenter? = nil, to view: UIView, _ constant: CGFloat = .zero) -> Self {
-    view.addSubview(self)
+  public func center(_ axis: LayoutCenter? = nil, to view: Constraintable,_ isSafeArea: Bool = false, _ constant: CGFloat = .zero) -> Self {
+    view.addSubviews([self])
     switch axis {
     case .horizontal:
-      centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: constant).activated()
+      centerHorizontal(to: view, isSafeArea, constant: constant)
     case .vertical:
-      centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).activated()
+      centerVertical(to: view, isSafeArea, constant: constant)
     case .none:
-      centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: constant).activated()
-      centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).activated()
+      centerHorizontal(to: view, isSafeArea, constant: constant)
+      centerVertical(to: view, isSafeArea, constant: constant)
     }
     return self
+  }
+  
+  private func centerHorizontal(to view: Constraintable, _ isSafeArea: Bool = false, constant: CGFloat = .zero) {
+    centerXAnchor.constraint(equalTo: view.anchor(.centerX(isSafeArea)), constant: constant).activated()
+  }
+  
+  private func centerVertical(to view: Constraintable, _ isSafeArea: Bool = false, constant: CGFloat = .zero) {
+    centerYAnchor.constraint(equalTo: view.anchor(.centerY(isSafeArea)), constant: constant).activated()
   }
 }
 
