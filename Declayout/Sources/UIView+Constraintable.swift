@@ -24,6 +24,8 @@ public enum LayoutAttribute {}
 
 public protocol Constraintable: Dimensionable, Spacingable, Centerable {
   typealias ViewParams = (inout Self) -> Void
+  @discardableResult
+  func addSubviews(_ views: [UIView]) -> Self
   init()
 }
 
